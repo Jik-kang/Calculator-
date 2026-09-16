@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #2b2622;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+.calculator-card {
+    background: #fdfbf7;
+    width: 100%;
+    max-width: 480px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid #d4c8b5;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #3e2723;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Tab Switcher */
+.tab-menu {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 0.6rem;
+    background: #e8ded1;
+    border: none;
+    border-radius: 6px;
+    color: #5d544c;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tab-btn.active {
+    background: #8c431d;
+    color: #ffffff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Forms & Inputs */
+.input-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a3525;
+    margin-bottom: 0.4rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid #c8bc9e;
+    background: #f4eee1;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #2c1d11;
+}
+
+.btn-calc {
+    width: 100%;
+    padding: 0.75rem;
+    background: #8c431d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: 0.2s;
+}
+
+.btn-calc:hover {
+    background: #6e3314;
+}
+
+/* Result Box */
+.result-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #eee6d8;
+    border-radius: 6px;
+    border-left: 4px solid #8c431d;
+}
+
+.result-box h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #3e2723;
+}
+
+.step-box {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px dashed #c8bc9e;
+    font-size: 0.88rem;
+    color: #4a3525;
+}
+
+/* Matrix Grid */
+.matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.matrix-grid input {
+    text-align: center;
+    font-weight: bold;
+}
+

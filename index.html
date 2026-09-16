@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math & CS Super Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="calculator-card">
+        <h1>Math & CS Calculator</h1>
+
+        <!-- แถบเลือกโหมด -->
+        <div class="tab-menu">
+            <button class="tab-btn active" onclick="switchTab('base')">แปลงเลขฐาน</button>
+            <button class="tab-btn" onclick="switchTab('matrix')">เมทริกซ์ (Det 2x2)</button>
+        </div>
+
+        <!-- ================= MODE 1: BASE CONVERTER ================= -->
+        <div id="base-tab" class="tab-content active">
+            <div class="input-group">
+                <label for="base-input">กรอกตัวเลขที่ต้องการแปลง:</label>
+                <input type="text" id="base-input" placeholder="เช่น 25 หรือ 1010" value="25">
+            </div>
+
+            <div class="input-group">
+                <label for="from-base">จากฐาน:</label>
+                <select id="from-base">
+                    <option value="10" selected>ฐาน 10 (Decimal)</option>
+                    <option value="2">ฐาน 2 (Binary)</option>
+                    <option value="8">ฐาน 8 (Octal)</option>
+                    <option value="16">ฐาน 16 (Hexadecimal)</option>
+                </select>
+            </div>
+
+            <button class="btn-calc" onclick="convertBase()">คำนวณแปลงเลขฐาน</button>
+
+            <!-- แสดงผลลัพธ์ -->
+            <div class="result-box" id="base-results" style="display:none;">
+                <h3>ผลลัพธ์การแปลง:</h3>
+                <p><strong>ฐาน 2 (Binary):</strong> <span id="res-bin"></span></p>
+                <p><strong>ฐาน 8 (Octal):</strong> <span id="res-oct"></span></p>
+                <p><strong>ฐาน 10 (Decimal):</strong> <span id="res-dec"></span></p>
+                <p><strong>ฐาน 16 (Hex):</strong> <span id="res-hex"></span></p>
+                <div class="step-box">
+                    <strong>ขั้นตอนการคำนวณ (Step-by-Step):</strong>
+                    <div id="base-steps"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= MODE 2: MATRIX CALCULATOR ================= -->
+        <div id="matrix-tab" class="tab-content">
+            <p><strong>เมทริกซ์ 2x2:</strong></p>
+            <div class="matrix-grid">
+                <input type="number" id="m00" value="4">
+                <input type="number" id="m01" value="2">
+                <input type="number" id="m10" value="1">
+                <input type="number" id="m11" value="3">
+            </div>
+
+            <button class="btn-calc" onclick="calcMatrix()">คำนวณหา Determinant</button>
+
+            <div class="result-box" id="matrix-results" style="display:none;">
+                <h3>ผลลัพธ์:</h3>
+                <p><strong>det(A):</strong> <span id="res-det"></span></p>
+                <div class="step-box">
+                    <strong>วิธีทำ:</strong>
+                    <p id="matrix-steps"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
